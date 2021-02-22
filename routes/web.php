@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'LandingPageController@index')->name('home');
+
+Route::resource('employees', 'EmployeeController');
+Route::resource('departments', 'DepartmentController');
+Route::resource('companies', 'CompanyController');
