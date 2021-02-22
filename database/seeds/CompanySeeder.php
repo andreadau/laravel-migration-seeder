@@ -1,6 +1,8 @@
 <?php
 
+use App\Company;
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
 class CompanySeeder extends Seeder
 {
@@ -9,8 +11,14 @@ class CompanySeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        //
+        for ($i=0; $i < 30 ; $i++) { 
+            $newCompany = new Company();
+            $newCompany->name = $faker->company();
+            $newCompany->address = $faker->address();
+            $newCompany->worker = $faker->name(10);
+            $newCompany->save();
+        }
     }
 }

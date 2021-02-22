@@ -5,9 +5,9 @@
             @foreach($employees as $employee)
                 <div class="posts">
                     <h2>{{$employee->fullname}}</h2>
-                    <h2>{{$employee->company}}</h2>
-                    <p>{{$employee->role}}</p>
-                    <p>{{$employee->salary}}</p>
+                    <p>Company : {{$employee->company}}</p>
+                    <p>Role : {{$employee->role}}</p>
+                    <p>Salary : {{$employee->salary}}</p>
                     <div class="form-button">
                         <a href="{{ route('employees.show', ['employee' => $employee->id]) }}">
                             <i class="fas fa-eye fa-md fa-fw"></i>
